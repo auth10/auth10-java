@@ -4,7 +4,7 @@ The code is a simplified version with some improvements of the library released 
 
 ## Usage
 
- Clone it
+Clone it
 
 	git clone https://github.com/auth10/auth10-java.git
 
@@ -15,11 +15,15 @@ Import the Maven that was just downloaded in your project (File -> Import -> Exi
 Add a reference to `com.auth10.federation` library from your project. Edit your project Maven file `pom.xml` and add this:
 
 ```xml
-<dependency>
-	<groupId>com.auth10.federation</groupId>
-	<artifactId>auth10-federation</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-</dependency>
+<dependencies>
+	...
+	<dependency>
+		<groupId>com.auth10.federation</groupId>
+		<artifactId>auth10-federation</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+	...
+</dependencies>
 ```
 
 Add a federation.properties file under `resources` folder:
@@ -56,4 +60,12 @@ Add the `WSFederationFilter` to the `web.xml` file:
 </filter-mapping>
 ```
 
+## Consuming user attributes
 
+```java
+// gets the user name
+String name = request.getRemoteUser();
+
+// gets the user claims
+List<Claim> claims = ((FederatedPrincipal)request.getUserPrincipal()).getClaims()
+```
