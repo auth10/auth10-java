@@ -6,33 +6,38 @@ The code is a simplified version with some improvements of the library released 
 
  Clone it
 
-	git clone https://github.com/woloski/Auth10.Java.git
+	git clone https://github.com/auth10/auth10-java.git
 
 Or download it as zip
 
-	https://github.com/woloski/Auth10.Java/zipball/master
+	https://github.com/auth10/auth10-java/zipball/master
 
-Import the Maven project to your source code (File -> Import -> Existing Maven Projects)
+Import the Maven that was just downloaded in your project (File -> Import -> Existing Maven Projects)
 
-Add a reference to `com.auth10.federation` library from your project. Using Maven, edit your `pom.xml` and add this:
+Add a reference to `com.auth10.federation` library from your project. Edit your project Maven file `pom.xml` and add this:
 
+```xml
 	<dependency>
   		<groupId>com.auth10.federation</groupId>
   		<artifactId>auth10-federation</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
-  	
+ ```
+
 Add a federation.properties file under `resources` folder:
 
+```
 	federation.trustedissuers.issuer=https://your_identity_provider/
 	federation.trustedissuers.thumbprint=CF50166CE4B....signing cert thumbprint...4DA668F96BF
 	federation.trustedissuers.friendlyname=My Identity Provider
 	federation.audienceuris=http://localhost:8080/sample-federation/
 	federation.realm=http://localhost:8080/sample-federation/
 	federation.enableManualRedirect=false
+```
 
 Add the `WSFederationFilter` to the `web.xml` file:
 
+```xml
 	<filter>
 	  <filter-name>FederationFilter</filter-name>
 	  <filter-class>com.auth10.federation.WSFederationFilter</filter-class>
@@ -51,9 +56,6 @@ Add the `WSFederationFilter` to the `web.xml` file:
 	  <filter-name>FederationFilter</filter-name>
 	  <url-pattern>/*</url-pattern>
 	</filter-mapping>
-
-
-
-
+```
 
 
