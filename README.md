@@ -1,5 +1,7 @@
 This library speaks the WS-Federation protocol and SAML 1.1 and 2.0 tokens. It interops fine with Microsoft-related products like ADFS, Windows Azure Active Directory and Windows Identity Foundation.
 
+The code is a simplified version with some improvements of the library released by Microsoft <https://github.com/WindowsAzure/azure-sdk-for-java-samples>. 
+
 ## Usage
 
  Clone it
@@ -16,7 +18,7 @@ Add a reference to `com.auth10.federation` library from your project. Using Mave
 
 	<dependency>
   		<groupId>com.auth10.federation</groupId>
-  		<artifactId>waad-federation</artifactId>
+  		<artifactId>auth10-federation</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   	
