@@ -4,7 +4,7 @@
 
 	<artifactId>auth10-federation</artifactId>
 	<groupId>com.auth10.federation</groupId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.9.0</version>
 	<name>auth10-federation</name>
 	<packaging>jar</packaging>
 	<description>WS-Federation and SAML tokens library to secure Java-based applications</description>
